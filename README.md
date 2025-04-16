@@ -1,5 +1,4 @@
-PDF Document OCR & Classification Tool:
-
+PDF Document OCR & Classification Tool
 This Python script extracts text from scanned PDF documents by converting them into images, preprocessing them for clarity, and using OCR (Optical Character Recognition) to extract and classify the content. It also identifies the type of document (e.g., Family Certificate, Nikahnama, etc.) and displays the extracted text in a readable table format.
 
 🔧 Features
@@ -98,5 +97,3 @@ Only the first page of the PDF is processed. You can modify the loop to handle m
 Tune the blur_threshold and CLAHE values if results aren't accurate for your documents.
 
 For non-English documents, change the Tesseract language using lang="eng" to another (e.g., "urd" for Urdu).
-
-The only problem existing is the formatting of the table
