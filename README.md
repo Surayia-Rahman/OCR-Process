@@ -1,22 +1,25 @@
-PDF Document OCR & Classification Tool
-This Python script extracts text from scanned PDF documents by converting them into images, preprocessing them for clarity, and using OCR (Optical Character Recognition) to extract and classify the content. It also identifies the type of document (e.g., Family Certificate, Nikahnama, etc.) and displays the extracted text in a readable table format.
+PDF Document OCR & Classification Tool:
+
+This Python script extracts text from scanned PDF documents by converting them into images, preprocessing them for clarity, and using OCR (Optical Character Recognition) to extract and classify the content. It also identifies the type of document (e.g., Family Certificate, Nikahnama, etc.) and displays the extracted text in a readable table format. This was a personal project to identify and detect scanned documents; however there are issues with table detection so that will be added to a future to-do lisy.
 
 🔧 Features
-Convert PDF pages to images using Poppler
 
-Detect and enhance blurry or low-contrast images
+1. Convert PDF pages to images using Poppler
 
-Apply image preprocessing for better OCR accuracy
+2. Detect and enhance blurry or low-contrast images
 
-Extract text using Tesseract OCR
+3. Apply image preprocessing for better OCR accuracy
 
-Automatically classify document types (e.g., Family Certificate, Nikahnama)
+4. Extract text using Tesseract OCR
 
-Display extracted text in a terminal-based table
+5. Automatically classify document types (e.g., Family Certificate, Nikahnama in this case)
 
-Show the preprocessed image for visual confirmation
+6. Display extracted text in a terminal-based table
+
+7. Show the preprocessed image for visual confirmation
 
 📁 Project Structure
+
 bash
 Copy
 Edit
@@ -26,20 +29,21 @@ project/
 ├── README.md                # This file
 ├── requirements.txt         # Dependencies (optional)
 └── images_output/           # Folder to store converted images from PDF
+
+
 🛠️ Setup Instructions
 1. Install Dependencies
 First, ensure Python 3 is installed. Then, install the required packages:
 
-bash
-Copy
-Edit
 pip install opencv-python pytesseract pdf2image pillow tabulate numpy
+
 2. Install Tesseract OCR
 Download from: https://github.com/tesseract-ocr/tesseract
 
 Add Tesseract's path to your system's environment variables
 
 3. Install Poppler for Windows
+   
 Download from: https://github.com/oschwartz10612/poppler-windows/releases/
 
 Extract it and note the path (e.g., C:\Program Files\poppler-xx\Library\bin)
@@ -47,53 +51,33 @@ Extract it and note the path (e.g., C:\Program Files\poppler-xx\Library\bin)
 Replace this path in the script under poppler_path
 
 🧪 How to Run
+
 Update the following paths in the script:
 
-python
-Copy
-Edit
 pdf_path = r"C:\Path\To\Your\PDF\file.pdf"
 image_output_dir = r"C:\Path\To\Save\Images"
+
 Then run the script:
 
-bash
-Copy
-Edit
 python main.py
+
 The script will:
 
-Convert the first page of the PDF to an image
+1. Convert the first page of the PDF to an image
 
-Preprocess the image for better OCR
+2. Preprocess the image for better OCR
 
-Extract and display the text
+3. Extract and display the text
 
-Identify and print the document type
+4. Identify and print the document type
 
-Show the preprocessed image in a popup window
+S5. how the preprocessed image in a popup window
 
-📄 Example Output
-sql
-Copy
-Edit
-Processing the first image: page_1.png
-Image is blurry, enhancing sharpness...
-Applying denoising...
-Enhancing contrast...
-Applying adaptive thresholding...
-Identified Document Type: MARRIAGE CERTIFICATE
 
-Extracted Text Table:
-+------------------------+
-| Extracted Text         |
-+------------------------+
-| Name: John Doe         |
-| Date: 01/01/2020       |
-| ...                    |
-+------------------------+
 📝 Notes
-Only the first page of the PDF is processed. You can modify the loop to handle multiple pages.
 
-Tune the blur_threshold and CLAHE values if results aren't accurate for your documents.
+1. Only the first page of the PDF is processed. You can modify the loop to handle multiple pages.
 
-For non-English documents, change the Tesseract language using lang="eng" to another (e.g., "urd" for Urdu).
+2. Tune the blur_threshold and CLAHE values if results aren't accurate for your documents.
+
+3. For non-English documents, change the Tesseract language using lang="eng" to another (e.g., "urd" for Urdu).
